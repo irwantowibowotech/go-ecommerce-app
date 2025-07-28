@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      - POSTGRES_USER=irwanto
+      - POSTGRES_PASSWORD=gabug123
+      - POSTGRES_DB=db_online-shop
+    ports:
+      - "5433:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
